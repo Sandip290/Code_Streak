@@ -11,7 +11,7 @@ public class RoteatedArraySearch {
         System.out.println(search(nums, target));
     }
 
-    public int search(int[] nums, int target){
+    public static int search(int[] nums, int target){
         int low = 0;
         int high = nums.length-1;
         while(low <= high){
