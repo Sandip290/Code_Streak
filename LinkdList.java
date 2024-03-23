@@ -2,7 +2,7 @@ class Node{
     int data;
     Node next;
 
-    Node(int data1, Node next1){
+    Node(int data1, Node next1, Node prev){
         this.data = data1;
         this.next = next1;
     }
