@@ -1,52 +1,104 @@
-class Node {
-    public int data;       // Data stored in the node
-    public Node next;      // Reference to the next node in the list (forward direction)
-    public Node back;      // Reference to the previous node in the list (backward direction)
+class DoublyLinkedList {
+    private Node head;
+    private Node tail;
+    private int size;
 
-    // Constructor for a Node with both data, a reference to the next node, and a reference to the previous node
-    public Node(int data, Node next, Node back) {
-        this.data = data;
-        this.next = next;
-        this.back = back;
+    // Constructor
+    public DoublyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
     }
 
-    // Constructor for a Node with data, and no references to the next and previous nodes (end of the list)
-    public Node(int data) {
-        this.data = data;
-        this.next = null;
-        this.back = null;
-    }
-}
+    // Node class
+    private static class Node {
+        int data;
+        Node prev;
+        Node next;
 
-public class DoublyLinkedList {
-    public static void main(String[] args) {
-            int[] arr = {23,45,67,789,33,544};
-            Node head = convertArrToDll(arr);
-            print(head);
-    }
-
-    public static Node convertArrToDll(int[] arr){
-        if (arr==null || arr.length==0){
-            return null;
+        Node(int data, Node next, Node prev) {
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
         }
-        Node head = new Node(arr[0]);
-        Node prev = head;
-        for (int i =1; i<arr.length; i++){
-            Node temp = new Node(arr[i], null, prev);
-            prev.next = temp;
-            prev = temp;
+    }
+
+    // Method to check if the list is empty
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    // Method to get the size of the list
+    public int size() {
+        return size;
+    }
+
+    // Method to add a node at the start of the list
+    public static Node insertAtStart(Node head, int val){
+            Node newNode = new Node(val, head, null);
+            head.prev = newNode;
+            return newNode;
+    }
+
+    // Method to add a node at the end of the List
+    public static Node insertAtEnd(Node head, int val){
+        if (head == null){
+            Node newNode = new Node(val, null, null);
+          head = newNode;
+          return head;
         }
+        else{
+            Node temp = head;
+            while(temp.next != head){
+                temp = temp.next;
+            }
+            Node newNode = new Node(val, null, temp);
+            temp.next = newNode;
+
+            return head;
+        }
+    }
+
+
+    // Method to insert a node at kth element
+    public static Node insertAtPos(Node head, int val ,int pos){
+        if (pos == 1){
+            return insertAtStart(head, val);
+        }
+        Node temp = head;
+        int count = 0;
+        while ( temp != null){
+            count ++;
+            if (count == pos) break;
+            temp = temp.next;
+        }
+        Node tail = temp.prev;
+        Node newNode = new Node(val, temp , tail);
+        tail.next = newNode;
+        temp.prev = newNode;
+
         return head;
     }
 
-    private static void print(Node head){
-        while(head != null){
-            System.out.print(head.data+ " ");
-            head = head.next;
+    // Method to remove element from start
+
+    public static Node removeFromStart(Node head){
+        if (head == null){
+            return null;
         }
-        System.out.println();
+       else {
+           Node temp = head;
+        }
+       return head;
     }
 
 
 
+    // Method to display the list
+
+
+    public static void main(String[] args) {
+        DoublyLinkedList dll = new DoublyLinkedList();
+
+    }
 }
