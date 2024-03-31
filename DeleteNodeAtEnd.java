@@ -1,18 +1,18 @@
-class Node{
-    public int data;
-    public Node next;
-
-    // Constructor for Node with data and next node
-    public Node(int data1, Node next1) {
-        data = data1;
-        next = next1;
-    }
-
-    // Constructor for Node with only data (next set to null)
-    public Node(int data1) {
-        this(data1, null); // Call the other constructor to set next to null
-    }
-}
+//class Node{
+//    public int data;
+//    public Node next;
+//
+//    // Constructor for Node with data and next node
+//    public Node(int data1, Node next1) {
+//        data = data1;
+//        next = next1;
+//    }
+//
+//    // Constructor for Node with only data (next set to null)
+//    public Node(int data1) {
+//        this(data1, null); // Call the other constructor to set next to null
+//    }
+//}
 
 public class DeleteNodeAtEnd {
 
