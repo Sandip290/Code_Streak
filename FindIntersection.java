@@ -61,7 +61,7 @@ public class FindIntersection {
         if(answerNode == null)
             System.out.println("No intersection\n");
         else
-            System.out.println("The intersection point is "+answerNode.num);
+            System.out.println("The intersection point is "+answerNode.data);
 
     }
 
