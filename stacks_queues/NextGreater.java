@@ -1,4 +1,5 @@
 package stacks_queues;
+
 import java.util.Stack;
 
 class NextGreater {
@@ -14,6 +15,7 @@ class NextGreater {
                 if (st.empty()) {
                     nge[i] = -1;
                 } else {
+                    nge[i] = st.peek();
                 }
             }
             st.push(current);
